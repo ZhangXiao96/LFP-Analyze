@@ -25,6 +25,7 @@ If you want to see whether you do previous steps right, you can run **"retrieve_
 
 It may look like this:
 
+![](https://github.com/ZhangXiao96/LFP-Analyze/blob/master/pictures/retrieve.jpg)
 
 ## Plot Average Spectrogram ##
 
@@ -32,7 +33,7 @@ After you have built the data workspace, you can plot the average spectrogram of
 
 It may look like this:
 
-
+![](https://github.com/ZhangXiao96/LFP-Analyze/blob/master/pictures/result_Reward_average.jpg)
 
 ## Analyze Accuracy Matrix ##
 
@@ -41,3 +42,5 @@ After you have built the data workspace, you can analyze the accuracy matrix of 
 In **"analyze_acc_matrix.m"**, we use **libsvm-weights** to classify the data (some details can be seen in **"analyze_acc_matrix.m"**). In order to speed the program, we use **parallel computing** on channels. However, it still cost a lot of time.
 
 The accuracy matrix may look like this:
+
+![](https://github.com/ZhangXiao96/LFP-Analyze/blob/master/pictures/result_Reward_acc_matrix.jpg)
