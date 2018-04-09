@@ -5,7 +5,7 @@ y_name = 'Direction';
 t_length = 1024;
 f_length = 250;
 max_limit = 0.8; % upper limit of values (after subtracting the baseline).
-min_limit = 0; % lower limit of values (after subtracting the baseline).
+min_limit = -0.4; % lower limit of values (after subtracting the baseline).
 
 % load data
 X_file = struct2cell(load([input_file_dirs 'X_tf_' tag '.mat']));
