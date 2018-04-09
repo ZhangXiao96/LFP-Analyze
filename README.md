@@ -17,7 +17,7 @@ Please make sure that you have already install these toolkits.
 
 *You just need to run this part once to build the workspace.*
 
-At first, you can run **"extract_and_merge_data.m"** to merge the data from **"Igo08282012-01/"** and **"Igo08302012-01/"** (of course you can set the name). Then you will get a folder named **"data/"** which contains 3 subfolders --** "0828/"**, **"0830/"** and **"merge/"**. These are **workspaces** for the following operations.
+At first, you can run **"extract_and_merge_data.m"** to merge the data from **"Igo08282012-01/"** and **"Igo08302012-01/"** (of course you can set the name). Then you will get a folder named **"data/"** which contains 3 subfolders --**"0828/"**, **"0830/"** and **"merge/"**. These are **workspaces** for the following operations.
 
 Then you can run **"prepare_data.m"** to do **Gabor Decomposition** (We use [Matching Pursuit](https://en.wikipedia.org/wiki/Matching_pursuit "Matching Pursuit") to do this) on data and get **spectrograms** of data.*You should run it twice to get data of 'targ' and 'result'*.
 
@@ -39,7 +39,7 @@ It may look like this:
 
 After you have built the data workspace, you can analyze the accuracy matrix of data by running **"analyze_acc_matrix.m"** and you can also plot the accuracy matrix by running **"plot_acc_matrix.m"**.
 
-In **"analyze_acc_matrix.m"**, we use **libsvm-weights** to classify the data (some details can be seen in **"analyze_acc_matrix.m"**). In order to speed the program, we use **parallel computing** on channels. However, it still cost a lot of time.
+In **"analyze_acc_matrix.m"**, we use **libsvm-weights** to classify the data (some details can be seen in **"analyze_acc_matrix.m"**). In order to speed up the program, we use **parallel computing** on channels. However, it still cost a lot of time.
 
 The accuracy matrix may look like this:
 
