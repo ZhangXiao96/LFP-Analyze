@@ -1,7 +1,7 @@
 clear;clc;close all;
 input_file_dirs = 'data/merge/';
-tag = 'targ'; % 'result' or 'targ'
-y_name = 'Direction';% 'Reward' or 'Option' or 'Direction'
+tag = 'result'; % 'result' or 'targ'
+y_name = 'Reward';% 'Reward' or 'Option' or 'Direction'
 t_length = 1024;
 f_length = 250;
 new_shape = [100 100]; % should equal the shape used to resize X_tf.
@@ -35,5 +35,5 @@ colorbar()
 xlabel('Time (ms)'); ylabel('Frequency (Hz)');
 title('channel 3')
 
-suptitle(['accuracy with the sliding window ' num2str((f_length+1)/new_shape(2)*f_width) ...
+suptitle(['accuracy (' tag ' ' y_name ') ' 'with the sliding window ' num2str((f_length+1)/new_shape(2)*f_width) ...
          'Hz*' num2str((t_length/new_shape(1))*t_width) 'ms'])

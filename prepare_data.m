@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 input_file_dirs = 'data/merge/';
-tag = 'result'; % 'targ': X_targ.mat, 'result': X_result.mat
+tag = 'targ'; % 'targ': X_targ.mat, 'result': X_result.mat
 
 if ~((strcmp(tag, 'targ')==1) || (strcmp(tag, 'result')==1))
     error('the TAG "%s" is not valid!("targ" or "result")\n', tag);

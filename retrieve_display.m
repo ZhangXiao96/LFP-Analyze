@@ -56,33 +56,33 @@ figure;
 % original data.
 subplot(331);
 plot(t,X(trialNum,:,1)); 
-title('channel 1'); 
+title('channel 1'); xlabel('Time (ms)');
 axis tight
 
 subplot(332);
 plot(t,X(trialNum,:,2));
-title('channel 2');
+title('channel 2'); xlabel('Time (ms)');
 axis tight
 
 subplot(333);
 plot(t,X(trialNum,:,3));
-title('channel 3');
+title('channel 3'); xlabel('Time (ms)');
 axis tight
 
 % reconstruction
 subplot(334);
 plot(t,rSignal1,'k');
-title('Reconstruction');
+title('Reconstruction'); xlabel('Time (ms)');
 axis tight
 
 subplot(335);
 plot(t,rSignal2,'k');
-title('Reconstruction');
+title('Reconstruction'); xlabel('Time (ms)');
 axis tight
 
 subplot(336);
 plot(t,rSignal3,'k');
-title('Reconstruction');
+title('Reconstruction'); xlabel('Time (ms)');
 axis tight
 
 %spectrograms

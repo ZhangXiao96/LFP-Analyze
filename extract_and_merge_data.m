@@ -1,10 +1,10 @@
-
+clear;clc;close all;
 % ===================extract and merge data===================
 % you only need to run this part once.
 output_file_dirs = 'data/merge/';
 
-[X_targ1, X_result1, Direction1, Option1, Reward1] = ExtractData('Igo08282012-01/','data/0828/');
-[X_targ2, X_result2, Direction2, Option2, Reward2] = ExtractData('Igo08302012-01/','data/0830/');
+[X_targ1, X_result1, Direction1, Option1, Reward1] = ExtractDataFromLFPFoder('Igo08282012-01/','data/0828/');
+[X_targ2, X_result2, Direction2, Option2, Reward2] = ExtractDataFromLFPFoder('Igo08302012-01/','data/0830/');
 % merge these data.
 X_targ = cat(1, X_targ1, X_targ2);
 X_result = cat(1, X_result1, X_result2);
