@@ -39,17 +39,18 @@ Please make sure that you have already installed these toolkits.
  - **libsvm-weights**: [https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/#weights_for_data_instances](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/#weights_for_data_instances "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/#weights_for_data_instances")
  - **Matching Pursuit**: [https://github.com/supratimray/MP](https://github.com/supratimray/MP "https://github.com/supratimray/MP")
 
+**Please add the folder "functions/" to your path in advance.**
+
 ## Prepare Data ##
 
-**Please add the folder "functions/" to your path in advance.**
 
 *You just need to run this part once to build the workspace.*
 
-At first, you can run **"extract_and_merge_data.m"** to merge the data from **"Igo08282012-01/"** and **"Igo08302012-01/"** (of course you can set the name). Then you will get a folder named **"data/"** which contains 3 subfolders --**"0828/"**, **"0830/"** and **"merge/"**. These are **workspaces** of the following operations.
+At first, you can run **"extract_and_merge_data.m"** to merge the data from **"Igo08282012-01/"** and **"Igo08302012-01/"** (of course you can set another name). Then you will get a folder named **"data/"** which contains 3 subfolders --**"0828/"**, **"0830/"** and **"merge/"**. These are **workspaces** of the following operations.
 
-Then you can run **"prepare_data.m"** to do **Gabor Decomposition** (We use [Matching Pursuit](https://en.wikipedia.org/wiki/Matching_pursuit "Matching Pursuit") to do this) on data and get **spectrograms** of data. Please note that when building **X_tf**, a.k.a spectrogram, the size of X_tf will change. Therefore **DON'T** ignore the **scale (?Hz/pixel or ?ms/pixel)**. *You should run it twice to get data of 'targ' and 'result'*.
+Then you can run **"prepare_data.m"** to do **Gabor Decomposition** (We use [Matching Pursuit](https://en.wikipedia.org/wiki/Matching_pursuit "Matching Pursuit") to do this) on data and get **spectrograms** of data. Please note that when building **X_tf**, a.k.a spectrogram, the size of X_tf will change. Therefore **DON'T** ignore the **scale (?Hz/pixel or ?ms/pixel)**. *You should run it twice to get X_tfs of 'targ' and 'result'*.
 
-If you want to see whether you do previous steps right, you can run **"retrieve_display.m"** to plot the original data, the reconstructed data and the spectrogram of a trial (3 channels).  
+If you want to see whether you do previous steps correctly, you can run **"retrieve_display.m"** to plot the original data, the reconstructed data and the spectrogram of a trial (3 channels).  
 
 It may look like this:
 
@@ -73,10 +74,10 @@ If you run **"plot_average_spectrogram.m"**, it may look like this:
 
 After you have built the data workspace, you can analyze the accuracy matrix of data by running **"analyze_acc_matrix.m"** and you can also plot the accuracy matrix by running **"plot_acc_matrix.m"**.
 
-In **"analyze_acc_matrix.m"**, we use **libsvm-weights** to classify the data (some details can be seen in **"analyze_acc_matrix.m"**). In order to speed up the program, we use **parallel computing** on channels. However, it still cost a lot of time. In this step, you have two choices to balance the labels. One is **giving different weights to different labels** and the other one is **downsampling**. You can just change two boolean variables in **"analyze_acc_matrix.m"** to decide which method to use. We recommend **the latter**.
+In **"analyze_acc_matrix.m"**, we use **libsvm-weights** to classify the data (more details can be found in **"analyze_acc_matrix.m"**). In order to speed up the program, we use **parallel computing** on channels. However, it still cost a lot of time. In this step, you have two choices to balance the labels. One is **giving different weights to different labels** and the other one is **downsampling**. You can just change two boolean variables in **"analyze_acc_matrix.m"** to decide which method to use (more details can be found in **"analyze_acc_matrix.m"**). We recommend **the latter**.
 
 The accuracy matrix may look like this:
 
-- **val_split** = **0.5**; **tag** = **"result"**; **y_name** = **"Reward"**;
+- **val_split** = **0.5**; **tag** = **"result"**; **y_name** = **"Reward"**; **downsample**.
 
 ![](https://github.com/ZhangXiao96/LFP-Analyze/blob/master/pictures/result_reward.jpg)
