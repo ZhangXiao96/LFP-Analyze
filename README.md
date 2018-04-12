@@ -2,6 +2,8 @@
 
 **Because of the data security, we just upload our code.**
 
+## Introduction ##
+
 This project is mainly about [Local Field Potential](https://en.wikipedia.org/wiki/Local_field_potential "Local Field Potential") **(LFP)**. Thoulgh we can't publish our data, we  can present its format.
 
 The data is **3-channel time series**. The sampling rate is **1kHz** and the length of series is **1024 points (-500ms~523ms)**. However, it is only the signal **0ms~523ms** that matters.
